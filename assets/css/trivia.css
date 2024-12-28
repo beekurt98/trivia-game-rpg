@@ -1,0 +1,114 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-image: url("https://r4.wallpaperflare.com/wallpaper/549/85/170/pixel-cat-fantasy-art-digital-art-river-castle-hd-wallpaper-b4643845143c7edd76eee0b465d9df55.jpg");
+    background-image: url("../images/sitebg.png");
+    margin: 0;
+}
+
+.top-part {
+    height: 100px;
+}
+
+.nav {
+    margin: auto;
+}
+
+.main-cont {
+    background-color: #538ac3;
+    height: auto;
+    margin: auto;
+    border: solid #2e5a89;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+
+.main-cont, footer, .nav {
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+}
+
+.stat-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 420px;
+    margin: 10px;
+    margin-bottom: 0;
+}
+
+.round {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.question {
+    padding: 5px;
+}
+
+.answer {
+    cursor: pointer;
+    height: 30px;
+    border: solid #538ac3;
+}
+
+.answer:hover {
+    background-color: #3b6b9c;
+}
+
+.answer:hover::before {
+    content: "➢"
+}
+
+.answer, .question {
+    width: 400px;
+}
+
+.screen {
+    border: solid #2e5a89;
+    height: 200px;
+    width: 420px;
+}
+
+footer{
+    margin: auto;
+    color: white;
+}
+
+.game-end {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    border: solid #2e5a89;
+    background-color: #4d89c5;
+    p {
+        font-weight: bold;
+    }
+}
+
+.indicator-text {
+    margin-top: 30px;
+    font-family: 'Press Start 2P';
+}
+
+.play-again-btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    height: 30px;
+    width: 160px;
+    border: inset #2e5a89;
+    background-color: #bbdbfe;
+}
+
+.play-again-btn:hover {
+    border: 4px outset #2e5a89;
+}

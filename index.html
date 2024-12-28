@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Trivia Game</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='./assets/css/trivia.css'>
+    <!-- <script src='./assets/js/trivia.js' type="module" defer></script>
+    <script src='./assets/js/canvas.js' type="module" defer></script> -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/gameboy-favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
+    <script src='./assets/js/all.js' type="module" defer></script>
+
+</head>
+<body>
+    <div class="top-part"></div>
+    <div class="nav">
+    </div>
+    <div class="main-cont">
+        <div class="stat-info">
+            <div class="round">Round: 1</div>
+            <div class="user-hearts"></div>
+            <div class="monster-hearts"></div>
+        </div>
+        <div class="screen">
+            <canvas class="canvas" width="420px" height="200px"></canvas>
+        </div>
+        <div id="question-container"></div>
+        <button class="see-answers" onclick="showAnswers()" hidden>See Answers</button>
+        <div class="all-qs"></div>
+    </div>
+    <footer>
+        made with 🩵 for 🧡<br>
+        by bee
+    </footer>
+</body>
+</html>
