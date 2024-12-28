@@ -28,7 +28,13 @@ body {
 
 
 .main-cont, footer, .nav {
-    width: 100%;
+    width: 430px;
+}
+
+#question-container {
+    width: 370px;
+    margin: auto;
+    font-size: 17px;
 }
 
 footer {
@@ -67,7 +73,7 @@ footer {
 }
 
 .answer, .question {
-    width: 400px;
+    width: 100%;
 }
 
 .screen {
@@ -111,4 +117,35 @@ footer{
 
 .play-again-btn:hover {
     border: 4px outset #2e5a89;
+}
+
+@media (max-width: 480px) {
+    .main-cont {
+        padding: 5px;
+        border: none;
+    }
+    .main-cont, footer, .nav {
+        width: 100%;
+        margin: auto;
+    }
+    .top-part {
+        height: 50px;
+    }
+    .main-cont {
+        margin-top: 0;
+        height: 90vh;
+    }
+
+    .answer {
+        height: 30px;
+    }
+    .answer, .question {
+        font-size: 21px;
+
+    }
+
+    .play-again-btn {
+        height: 30px;
+        width: 120px;
+    }
 }

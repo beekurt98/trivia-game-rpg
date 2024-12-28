@@ -5,8 +5,6 @@
 let questionNumStore = []
 // const scoreInfo = document.querySelector(".score")
 const userHeartsDiv = document.querySelector(".user-hearts")
-const monsterHeartsDiv = document.querySelector(".monster-hearts")
-const roundDiv = document.querySelector(".round")
 let data;
 
 
@@ -20,10 +18,6 @@ let roundInfo = {
 }
 let hearts = roundInfo.user;
 let monsterHearts = roundInfo.monster;
-
-userHeartsDiv.innerHTML = `User Hearts: ${roundInfo.user}`
-
-monsterHeartsDiv.innerHTML = `Monster Hearts: ${roundInfo.monster}`
 
 
 // random number generator
@@ -116,11 +110,6 @@ function bindEvents(correctAnswer) {
     })
 }
 
-function showScore(user, monster) {
-    userHeartsDiv.innerHTML = `User Score: ${user}`
-    monsterHeartsDiv.innerHTML = `Monster Hearts: ${monster}`
-}
-
 function checkIfGameEnds() {
     if (score == 35) {
         questionCont.remove();
@@ -144,7 +133,6 @@ function checkIfGameEnds() {
     } else if (monsterHearts == 0) {
         // round ends, proceed to next round
         currentRound++
-        roundDiv.innerHTML = `Round: ${currentRound}`
         hearts = roundInfo.user + 2;
         monsterHearts = roundInfo.monster * 2;
         showScore(hearts, monsterHearts)
@@ -175,27 +163,18 @@ function checkIfGameEnds() {
 function addPlayAgainButtonHandler() {
     const playAgainBtn = document.querySelector(".play-again-btn");
     playAgainBtn.addEventListener("click", () => {
-        // Reset game state
         score = 0;
         currentRound = 1;
         hearts = roundInfo.user;
         monsterHearts = roundInfo.monster;
         questionNumStore = [];
         
-        // Reset UI
-        roundDiv.innerHTML = `Round: ${currentRound}`;
-        userHeartsDiv.innerHTML = `User Hearts: ${hearts}`;
-        monsterHeartsDiv.innerHTML = `Monster Hearts: ${monsterHearts}`;
-        
-        // Clear game end screen
         document.querySelector(".game-end").remove();
         
-        // Reinitialize the game
         init();
     });
 }
 
-// Freeze death animations on the last frame
 function freezeDeathAnimation() {
     if (currentAnimation === "death") {
         heroFrameIndex = animations.death.frameCount - 1;
@@ -205,7 +184,8 @@ function freezeDeathAnimation() {
     }
 }
 
-// Display "Game Over" or "You Win!" texts on the canvas
+let darkBlueClr = "#2e5a89"
+
 function displayEndGameText(message) {
     ctx.save();
     ctx.font = "30px 'Press Start 2P'";
@@ -370,9 +350,14 @@ function animate(time) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(backgroundImg, 0, -80); 
         ctx.font = "25px 'Press Start 2P'";
+        ctx.fillStyle = "#001a23";
         ctx.fillText(hearts,30,45);
         ctx.font = "25px 'Press Start 2P'";
+        ctx.fillStyle = "#001a23";
         ctx.fillText(monsterHearts,370,45);
+        ctx.font = "15px 'Press Start 2P'";
+        ctx.fillStyle = "#001a23";
+        ctx.fillText(`Round: ${currentRound}`,canvas.width / 2 - 50, 35);
         const heroAnim = animations[currentAnimation];
         ctx.drawImage(
             heroAnim.image,
