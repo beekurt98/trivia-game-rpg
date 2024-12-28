@@ -80,7 +80,6 @@ function bindEvents(correctAnswer) {
                 // score data
                 monsterHearts--
                 setTimeout(() => {
-                    showScore(hearts, monsterHearts)
                     checkIfGameEnds()
                     getQuestions(data)
                     return;
@@ -100,7 +99,6 @@ function bindEvents(correctAnswer) {
                     enemyFrameIndex = 0;
                 }
                 setTimeout(() => {
-                    showScore(hearts, monsterHearts)
                     checkIfGameEnds()
                     getQuestions(data)
                     return;
@@ -135,7 +133,6 @@ function checkIfGameEnds() {
         currentRound++
         hearts = roundInfo.user + 2;
         monsterHearts = roundInfo.monster * 2;
-        showScore(hearts, monsterHearts)
         return;
     } else if (hearts == 0) {
         // game ends
