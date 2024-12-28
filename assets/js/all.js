@@ -48,7 +48,6 @@ function getQuestions() {
         <p class="answer B">B. ${currentQuestion.B}</p>
         <p class="answer C">C. ${currentQuestion.C}</p>
         <p class="answer D">D. ${currentQuestion.D}</p>
-        <p class="">Correct: ${currentQuestion.answer}</p>
     </div>`
     bindEvents(currentQuestion.answer);
 }
