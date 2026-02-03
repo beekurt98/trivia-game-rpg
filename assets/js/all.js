@@ -36,7 +36,10 @@ async function init() {
 const questionCont = document.querySelector("#question-container")
 
 function getQuestions() {
-
+    if (!questionCont) {
+        questionCont = document.createElement("div")
+        questionCont.setAttribute('id', "question-container")
+    }
     let questionNum = randomNum(0, data.length)
 
     questionNumStore.includes(questionNum) ? questionNum = randomNum(0, data.length) : questionNumStore.push(questionNum)
@@ -167,7 +170,7 @@ function addPlayAgainButtonHandler() {
         
         document.querySelector(".game-end").remove();
         
-        init();
+        getQuestions();
     });
 }
 
